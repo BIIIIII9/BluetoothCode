@@ -177,9 +177,9 @@ public class ReceiveRadio extends Service{
             final int zero=ChangeNameOfBluetooth.signalZero;
             if(length>ChangeNameOfBluetooth.baseByteMsg) {
                 final int  base=ChangeNameOfBluetooth.baseByteMsg;
-                setMessageBody(msg[base-3]&0xFF-zero,
-                        msg[base-2]&0xFF-zero,
-                        msg[base-1]&0xFF-zero, msg);
+                setMessageBody((msg[base-3]&0xFF)-zero,
+                        (msg[base-2]&0xFF)-zero,
+                        (msg[base-1]&0xFF)-zero, msg);
             }
         }
         //Remove the signal bytes(First 6 byte)

@@ -117,7 +117,7 @@ public class ChangeNameOfBluetooth extends Service {
                 int lang =0;
                 //If the next character is not first character, the capacity -1 "10xx xxxx"
                 while(messageSerial < messageTotal) {
-                    while ((80 <= (0xFF & byteMessage_Be[lang + contentSize]) &&
+                    while ((0x80 <= (0xFF & byteMessage_Be[lang + contentSize]) &&
                             (0xFF & byteMessage_Be[lang + contentSize]) <= 0xBF
                     )) {
                         contentSize--;
@@ -169,7 +169,7 @@ public class ChangeNameOfBluetooth extends Service {
         int lang=0;
         int count=0;
         while(lang+size < source.length) {
-        while ((80 <= (0xFF & source[lang + contentSize]) &&
+        while ((0x80 <= (0xFF & source[lang + contentSize]) &&
                 (0xFF & source[lang + contentSize]) <= 0xBF
         )) {
             contentSize--;
